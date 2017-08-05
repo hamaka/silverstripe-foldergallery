@@ -1,4 +1,10 @@
 # Folder based image gallery for CMS SilverStripe 3.1.x
+```
+PLEASE NOTE: This project is no longer maintained as I have no use case for it sanymore.
+If you want to maintain this project, please feel free to fork this project.
+Cheers cwsoft
+```
+
 The `cwsoft-foldergallery` module is a light weight, simple to use folder based image gallery for the [CMS SilverStripe 3](http://silverstripe.org) which enables you to setup small to medium image galleries with ease.
 
 ## Features
@@ -42,7 +48,7 @@ By default, the Foldergallery layout matches the SilverStripe 3.1.x standard `si
 ## Usage
 To setup a `cwsoft-foldergallery` page with two albums "Animals" and "Buildings", just follow the steps shown in the sketch below. The steps below assume you have already installed the module before.
 
-![](docs/cwsoft-foldergallery-backend.png) 
+![](docs/cwsoft-foldergallery-backend.png)
 
 1. Create a page of type `Foldergallery` (will serve as album overview) and save it (saving will create the folder 'assets/cwsoft-foldergallery for you)
 2. Create album folders `animals` and `buildings` inside `assets/cwsoft-foldergallery` via SilverStripe Files section and upload images to it. Images named "001-this-will-be-the-first-image.jpg" get a description as follows: "This will be the first image". The first image in an album folder will be used as album cover image.
@@ -50,12 +56,12 @@ To setup a `cwsoft-foldergallery` page with two albums "Animals" and "Buildings"
 4. Provide a description for the album overview page or the album pages via the WYSIWYG editor and save the page if done
 5. Now create child pages of type `Foldergallery` for the albums `Animals` and `Buildings`. Choose the album image folder from the dropdown box (3) and provide a album description via the WYSIWYG editor (4) and save the pages
 
-Tip: If you do just want to show a single page with images on it, just follow steps 1 through 4, but choose an image folder in step 3. 
+Tip: If you do just want to show a single page with images on it, just follow steps 1 through 4, but choose an image folder in step 3.
 
 A collage of the frontend view for this set-up is shown below:
 
 ***Collage (album overview / album page / Colorbox effect):***
-![](docs/cwsoft-foldergallery-frontend.png) 
+![](docs/cwsoft-foldergallery-frontend.png)
 
 ## Known Issues
 Known issues can be tracked and reported via GitHubs [issue tracking service](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/issues). If you run into any issues with the cwsoft-foldergallery module, visit the issue tracker and check if a similar issue was already reported. If not, just add a new topic descriping your issue.
@@ -76,4 +82,4 @@ Credits go to the following SilverStripe community members who helped in one way
 
  - [Kereru](http://www.silverstripe.org/ForumMemberProfile/show/26608): Bug report on thumbnail creation
  - [haantje72](http://www.silverstripe.org/ForumMemberProfile/show/5933): Dutch translation, ideas and suggestions for further improvements
- - [Juanitou](http://www.silverstripe.org/ForumMemberProfile/show/3189): French translation, bugfixes, [i18n Javascript support](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/commit/9273343fa07eee5e3a5b2f05760237e397010193) 
+ - [Juanitou](http://www.silverstripe.org/ForumMemberProfile/show/3189): French translation, bugfixes, [i18n Javascript support](https://github.com/cwsoft/silverstripe-cwsoft-foldergallery/commit/9273343fa07eee5e3a5b2f05760237e397010193)
