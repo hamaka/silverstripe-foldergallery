@@ -1,9 +1,9 @@
 {
-    "name": "cwsoft/silverstripe-foldergallery",
-    "type": "silverstripe-module",
-    "description": "A light weight and simple to use folder based image gallery for the CMS SilverStripe 3 enabling you to setup small to medium image galleries with ease.",
-    "keywords": ["silverstripe", "gallery", "image", "imagegallery", "cwsoft"],
-    "homepage": "https://github.com/cwsoft/silverstripe-cwsoft-foldergallery",
+    "name": "juanitou/silverstripe-foldergallery",
+    "type": "silverstripe-vendormodule",
+    "description": "A light weight and simple to use folder based image gallery for the CMS SilverStripe enabling you to setup small to medium image galleries with ease.",
+    "keywords": ["silverstripe", "gallery", "image", "imagegallery", "foldergallery"],
+    "homepage": "https://github.com/Juanitou/silverstripe-foldergallery",
     "license": "GNU General Public License (GPL) v3.0",
     "authors": [
         {
@@ -13,13 +13,30 @@
             "role": "Developer"
         },
         {
-            "name": "Juan Molina",
-            "homepage": "https://github.com/Juanitou"
+            "name": "Juan Ramón Molina Menor",
+            "email": "info@juanmolina.eu",
+            "homepage": "https://github.com/Juanitou",
+            "role": "Developer"
         }
     ],
     "require": {
-        "php": ">=5.3.0",
-        "silverstripe/framework": "3.1.*",
-        "silverstripe/cms": "3.1.*"
+        "silverstripe/framework": "^4",
+        "silverstripe/cms": "^4"
     }
+    "extra": {
+        "branch-alias": {
+            "dev-master": "4.x-dev"
+        },
+        "expose": [
+            "css",
+            "images",
+            "javascript",
+            "thirdparty"
+        ]
+    },
+    "autoload": {
+        "psr-4": {
+            "Juanitou\\FolderGallery\\": "src/"
+        }
+    },
 }
