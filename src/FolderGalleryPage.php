@@ -23,8 +23,8 @@ use SilverStripe\Forms\TreeDropdownField;
 */
 
 class FolderGalleryPage extends Page {
-    private static $allowed_children = array(FolderGalleryPage::class);
-    private static $db = array('AlbumFolderID' => 'Int');
+    private static $allowed_children = [FolderGalleryPage::class];
+    private static $db = ['AlbumFolderID' => 'Int'];
     private static $icon = 'images/page-tree-icon.gif';
     private static $plural_name = 'FolderGalleries';
     private static $singular_name = 'FolderGallery';
@@ -44,7 +44,7 @@ class FolderGalleryPage extends Page {
         $fields = parent::getCMSFields();
 
         // get "foldergallery" folder object
-        $album = Folder::get()->filter('Filename', 'assets/foldergallery/')->First();
+        $album = Folder::get()->filter('Name', 'foldergallery')->First();
         if (! $album) return $fields;
 
         // add dropdown field with album folders (subfolders of assets/foldergallery)
@@ -54,7 +54,7 @@ class FolderGalleryPage extends Page {
                 'FolderGalleryPage.CHOOSE_IMAGE_FOLDER',
                 'Choose image folder (subfolder assets/foldergallery/)'
             ),
-            'Folder'
+            Folder::class
         );
         $tree->setTreeBaseID((int) $album->ID);
         $fields->addFieldToTab('Root.Main', $tree, 'Content');
@@ -64,10 +64,10 @@ class FolderGalleryPage extends Page {
 
     /**
      * Updates the Image.ExifDate database column of image objects when page is saved
-     *
+     * TODO: This functions prevents adding a base folder to the gallery
      * @return void
      */
-    function onAfterWrite() {
+    /*function onAfterWrite() {
         parent::onAfterWrite();
 
         // update Image.ExifDate database fields of all images assigned to actual page if image sort option is set "4:ExifDate"
@@ -75,5 +75,5 @@ class FolderGalleryPage extends Page {
         if (FolderGalleryPageController::getImageSortOption() == "ExifDate") {
             FolderGalleryImageExtension::writeExifDates($this->AlbumFolderID);
         }
-    }
+    }*/
 }
