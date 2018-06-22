@@ -23,12 +23,13 @@ use SilverStripe\Forms\TreeDropdownField;
 */
 
 class FolderGalleryPage extends Page {
-	private static $allowed_children = array(Foldergallery::class);
+	private static $allowed_children = array(FolderGalleryPage::class);
 	private static $db = array('AlbumFolderID' => 'Int');
 	private static $icon = 'images/page-tree-icon.gif';
-	private static $plural_name = 'Foldergalleries';
-	private static $singular_name = 'Foldergallery';
+	private static $plural_name = 'FolderGalleries';
+	private static $singular_name = 'FolderGallery';
 	private static $description = 'Folder based gallery';
+	private static $table_name = 'FolderGallery';
 
 	/**
 	 * Adds dropdown field for album folders (subfolders inside assets/foldergallery)
@@ -71,7 +72,7 @@ class FolderGalleryPage extends Page {
 
 		// update Image.ExifDate database fields of all images assigned to actual page if image sort option is set "4:ExifDate"
 		// Todo: execute DB update on URL request instead page write to avoid timing issues when dealing with lots of big images
-		if (FolderGalleryPage_Controller::getImageSortOption() == "ExifDate") {
+		if (FolderGalleryPageController::getImageSortOption() == "ExifDate") {
 			FolderGalleryImageExtension::writeExifDates($this->AlbumFolderID);
 		}
 	}
