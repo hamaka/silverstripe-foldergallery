@@ -3,17 +3,19 @@
  * A lightweight folder based gallery module for the CMS SilverStripe
  *
  * Extends SilverStripe image object to provide Caption() and EXIF data.
- * 
+ *
  * LICENSE: GNU General Public License 3.0
- * 
- * @platform    CMS SilverStripe 3.1.x (or higher)
- * @package     cwsoft-foldergallery
+ *
+ * @platform    CMS SilverStripe 4 (or higher)
+ * @package     juanitou-foldergallery
  * @author      cwsoft (http://cwsoft.de)
+ * @author      Juanitou (http://juanmolina.eu)
  * @copyright   cwsoft
+ * @copyright   Juanitou
  * @license     http://www.gnu.org/licenses/gpl-3.0.html
 */
 
-class cwsFolderGalleryImageExtension extends DataExtension {
+class FolderGalleryImageExtension extends DataExtension {
 	// decorate Image object with additional ExifDate field
 	private static $db = array('ExifDate' => 'SS_Datetime');
 
@@ -43,7 +45,7 @@ class cwsFolderGalleryImageExtension extends DataExtension {
 		if (! in_array($image_extension, array('jpg', 'jpeg', 'tif', 'tiff'))) {
 			return null;
 		}
-		
+
 		// extract requested EXIF field
 		$image_path = Director::getAbsFile($this->owner->Filename);
 		$exif_data = @exif_read_data($image_path, 'EXIF', false, false);
@@ -64,15 +66,15 @@ class cwsFolderGalleryImageExtension extends DataExtension {
 		} else {
 			$images = Image::get();
 		}
-		
+
 		if (! $images->exists()) return false;
-		
+
 		// write/update Image.ExifDate database columns
 		foreach ($images as $image) {
 			// get exif original storage date if available
 			$exif_date = $image->ExifData($field='DateTimeOriginal');
 			$exif_date = is_null($exif_date) ? $image->Created : $exif_date;
-			
+
 			// update database field
 			$image->ExifDate = $exif_date;
 			$image->write();
