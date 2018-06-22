@@ -23,57 +23,57 @@ use SilverStripe\Forms\TreeDropdownField;
 */
 
 class FolderGalleryPage extends Page {
-	private static $allowed_children = array(FolderGalleryPage::class);
-	private static $db = array('AlbumFolderID' => 'Int');
-	private static $icon = 'images/page-tree-icon.gif';
-	private static $plural_name = 'FolderGalleries';
-	private static $singular_name = 'FolderGallery';
-	private static $description = 'Folder based gallery';
-	private static $table_name = 'FolderGallery';
+    private static $allowed_children = array(FolderGalleryPage::class);
+    private static $db = array('AlbumFolderID' => 'Int');
+    private static $icon = 'images/page-tree-icon.gif';
+    private static $plural_name = 'FolderGalleries';
+    private static $singular_name = 'FolderGallery';
+    private static $description = 'Folder based gallery';
+    private static $table_name = 'FolderGallery';
 
-	/**
-	 * Adds dropdown field for album folders (subfolders inside assets/foldergallery)
-	 *
-	 * @return modified backend fields
-	 */
-	function getCMSFields() {
-		// create folder assets/foldergallery if not already exists
-		Folder::find_or_make('foldergallery');
+    /**
+     * Adds dropdown field for album folders (subfolders inside assets/foldergallery)
+     *
+     * @return modified backend fields
+     */
+    function getCMSFields() {
+        // create folder assets/foldergallery if not already exists
+        Folder::find_or_make('foldergallery');
 
-		// get default CMS fields
-		$fields = parent::getCMSFields();
+        // get default CMS fields
+        $fields = parent::getCMSFields();
 
-		// get "foldergallery" folder object
-		$album = Folder::get()->filter('Filename', 'assets/foldergallery/')->First();
-		if (! $album) return $fields;
+        // get "foldergallery" folder object
+        $album = Folder::get()->filter('Filename', 'assets/foldergallery/')->First();
+        if (! $album) return $fields;
 
-		// add dropdown field with album folders (subfolders of assets/foldergallery)
-		$tree = new TreeDropdownField(
-			'AlbumFolderID',
-			_t(
-				'FolderGalleryPage.CHOOSE_IMAGE_FOLDER',
-				'Choose image folder (subfolder assets/foldergallery/)'
-			),
-			'Folder'
-		);
-		$tree->setTreeBaseID((int) $album->ID);
-		$fields->addFieldToTab('Root.Main', $tree, 'Content');
+        // add dropdown field with album folders (subfolders of assets/foldergallery)
+        $tree = new TreeDropdownField(
+            'AlbumFolderID',
+            _t(
+                'FolderGalleryPage.CHOOSE_IMAGE_FOLDER',
+                'Choose image folder (subfolder assets/foldergallery/)'
+            ),
+            'Folder'
+        );
+        $tree->setTreeBaseID((int) $album->ID);
+        $fields->addFieldToTab('Root.Main', $tree, 'Content');
 
-		return $fields;
-	}
+        return $fields;
+    }
 
-	/**
-	 * Updates the Image.ExifDate database column of image objects when page is saved
-	 *
-	 * @return void
-	 */
-	function onAfterWrite() {
-		parent::onAfterWrite();
+    /**
+     * Updates the Image.ExifDate database column of image objects when page is saved
+     *
+     * @return void
+     */
+    function onAfterWrite() {
+        parent::onAfterWrite();
 
-		// update Image.ExifDate database fields of all images assigned to actual page if image sort option is set "4:ExifDate"
-		// Todo: execute DB update on URL request instead page write to avoid timing issues when dealing with lots of big images
-		if (FolderGalleryPageController::getImageSortOption() == "ExifDate") {
-			FolderGalleryImageExtension::writeExifDates($this->AlbumFolderID);
-		}
-	}
+        // update Image.ExifDate database fields of all images assigned to actual page if image sort option is set "4:ExifDate"
+        // Todo: execute DB update on URL request instead page write to avoid timing issues when dealing with lots of big images
+        if (FolderGalleryPageController::getImageSortOption() == "ExifDate") {
+            FolderGalleryImageExtension::writeExifDates($this->AlbumFolderID);
+        }
+    }
 }
