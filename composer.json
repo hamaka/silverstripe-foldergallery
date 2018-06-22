@@ -22,10 +22,10 @@
     "require": {
         "silverstripe/framework": "^4",
         "silverstripe/cms": "^4"
-    }
+    },
     "extra": {
         "branch-alias": {
-            "dev-master": "4.x-dev"
+            "dev-master": "5.x-dev"
         },
         "expose": [
             "css",
@@ -38,5 +38,5 @@
         "psr-4": {
             "Juanitou\\FolderGallery\\": "src/"
         }
-    },
+    }
 }
