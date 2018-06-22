@@ -1,10 +1,10 @@
 ---
-Name: cwsoft-foldergallery-settings
+Name: foldergallery-settings
 After:
    - 'framework/*'
    - 'cms/*'
 ---
-cwsFolderGallery:
+FolderGallery:
    # pixel size of cropped album cover and album image thumbnails
    # Note: adapt "css/cwsoft-foldergallery.css" if you change the dimensions below
    THUMBNAIL_IMAGE_WIDTH: 150
@@ -33,4 +33,4 @@ GDBackend:
 Image:
    # extend image class by method Caption to build image caption from the filename
    extensions:
-      - cwsFolderGalleryImageExtension
+      - FolderGalleryImageExtension
