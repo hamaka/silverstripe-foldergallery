@@ -2,10 +2,10 @@ de:
   _config:
     WRONG_MODULE_FOLDER: 'Der Ordner "{folderName}" muß in "{moduleName}" umbenannt werden, um das {moduleName} Module nutzen zu können.'
 
-  cwsFolderGalleryPage:
+  FolderGalleryPage:
     SINGULARNAME: 'Bildergalerie'
     PLURALNAME: 'Bildergalerien'
-    CHOOSE_IMAGE_FOLDER: 'Wähle einen Bilderornder (Unterordner in assets/cwsoft-foldergallery/)'
+    CHOOSE_IMAGE_FOLDER: 'Wähle einen Bilderornder (Unterordner in foldergallery/)'
 
   Foldergallery:
     ALBUM: 'Album'

@@ -2,11 +2,11 @@ fr:
   _config:
     WRONG_MODULE_FOLDER: 'Pour que le module {moduleName} fonctionne correctement, le dossier {folderName} doit être renommé en {moduleName}.'
 
-  cwsFolderGalleryPage:
+  FolderGalleryPage:
     SINGULARNAME: 'Galerie (dossier)'
     PLURALNAME: 'Galeries (dossiers)'
     DESCRIPTION: 'Galerie basée sur des dossiers'
-    CHOOSE_IMAGE_FOLDER: 'Dossier associé (sous-dossier assets/cwsoft-foldergallery/)'
+    CHOOSE_IMAGE_FOLDER: 'Dossier associé (sous-dossier foldergallery/)'
 
   Foldergallery:
     ALBUM: 'Album&nbsp;'

@@ -2,10 +2,10 @@ nl:
   _config:
     WRONG_MODULE_FOLDER: 'Hernoem aub de map "{folderName}" naar "{moduleName}" om de {moduleName} module goed werkend te krijgen.'
 
-  cwsFolderGalleryPage:
+  FolderGalleryPage:
     SINGULARNAME: 'Fotoalbum'
     PLURALNAME: 'Fotoalbums'
-    CHOOSE_IMAGE_FOLDER: 'Kies uw fotomap (submap assets/cwsoft-foldergallery/)'
+    CHOOSE_IMAGE_FOLDER: 'Kies uw fotomap (submap foldergallery/)'
 
   Foldergallery:
     ALBUM: 'Album'
