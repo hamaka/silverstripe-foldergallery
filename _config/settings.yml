@@ -1,36 +1,17 @@
 ---
 Name: foldergallery-settings
-After:
-   - 'framework/*'
-   - 'cms/*'
 ---
-FolderGallery:
-   # pixel size of cropped album cover and album image thumbnails
-   # Note: adapt "css/cwsoft-foldergallery.css" if you change the dimensions below
-   THUMBNAIL_IMAGE_WIDTH: 150
-   THUMBNAIL_IMAGE_HEIGHT: 115
-
-   # max. pixel dimension of resized jQuery preview image (original image ratio kept)
-   PREVIEW_IMAGE_MAX_SIZE: 800
-
-   # number of albums and images displayed per page (pagination limit)
-   ALBUMS_PER_PAGE: 16
-   IMAGES_PER_PAGE: 12
-
-   # sort option by which images are displayed (1:Filename, 2:CreationTime, 3:LastEdited, 4: ExifDate)
-   IMAGE_SORT_OPTION: 1
-
-   # sort order by which images are displayed (1:Ascending, 2:Descending)
-   IMAGE_SORT_ORDER: 1
-
-   # flag to display breadcrumbs at top of album pages (only if at least one parent page exists)
-   SHOW_BREADCRUMBS: true
-
+Juanitou\FolderGallery:
+  THUMBNAIL_IMAGE_WIDTH: 150
+  THUMBNAIL_IMAGE_HEIGHT: 115
+  PREVIEW_IMAGE_MAX_SIZE: 800
+  ALBUMS_PER_PAGE: 16
+  IMAGES_PER_PAGE: 12
+  IMAGE_SORT_OPTION: 1
+  IMAGE_SORT_ORDER: 1
+  SHOW_BREADCRUMBS: true
 GDBackend:
-   # increase thumbnail image quality (default: 75)
-   default_quality: 95
-
-Image:
-   # extend image class by method Caption to build image caption from the filename
-   extensions:
-      - FolderGalleryImageExtension
+  default_quality: 95
+SilverStripe\Assets\Image:
+  extensions:
+    - Juanitou\FolderGallery\FolderGalleryImageExtension

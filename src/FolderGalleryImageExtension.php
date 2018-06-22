@@ -1,4 +1,11 @@
 <?php
+
+namespace Juanitou\FolderGallery;
+
+use SilverStripe\ORM\DataExtension;
+use SilverStripe\Control\Director;
+use SilverStripe\Assets\Image;
+
 /**
  * A lightweight folder based gallery module for the CMS SilverStripe
  *
