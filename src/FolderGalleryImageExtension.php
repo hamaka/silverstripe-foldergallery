@@ -2,9 +2,10 @@
 
 namespace Juanitou\FolderGallery;
 
-use SilverStripe\ORM\DataExtension;
-use SilverStripe\Control\Director;
 use SilverStripe\Assets\Image;
+use SilverStripe\Control\Director;
+use SilverStripe\ORM\DataExtension;
+use SilverStripe\ORM\FieldType\DBDatetime;
 
 /**
  * A lightweight folder based gallery module for the CMS SilverStripe
@@ -24,7 +25,7 @@ use SilverStripe\Assets\Image;
 
 class FolderGalleryImageExtension extends DataExtension {
 	// decorate Image object with additional ExifDate field
-	private static $db = array('ExifDate' => 'SS_Datetime');
+	private static $db = array('ExifDate' => 'Datetime');
 
 	/**
 	 * Creates a nice looking image caption from an image filename.
