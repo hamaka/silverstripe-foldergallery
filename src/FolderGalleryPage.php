@@ -28,7 +28,7 @@ class FolderGalleryPage extends Page {
     private static $icon = 'juanitou/silverstripe-foldergallery: images/page-tree-icon.gif';
     private static $plural_name = 'FolderGalleries';
     private static $singular_name = 'FolderGallery';
-    private static $description = 'Folder based gallery';
+    private static $description = 'Folder-based gallery';
     private static $table_name = 'FolderGallery';
 
     /**
@@ -51,12 +51,13 @@ class FolderGalleryPage extends Page {
         $tree = new TreeDropdownField(
             'AlbumFolderID',
             _t(
-                'FolderGalleryPage.CHOOSE_IMAGE_FOLDER',
+                __CLASS__ . '.CHOOSE_IMAGE_FOLDER',
                 'Choose image folder (subfolder assets/foldergallery/)'
             ),
             Folder::class
         );
-        $tree->setTreeBaseID((int) $album->ID);
+        // TODO: Bug pending
+        //$tree->setTreeBaseID((int) $album->ID);
         $fields->addFieldToTab('Root.Main', $tree, 'Content');
 
         return $fields;
