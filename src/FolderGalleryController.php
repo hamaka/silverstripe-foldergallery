@@ -3,15 +3,15 @@
 namespace Juanitou\FolderGallery;
 
 use PageController;
-use Requirements;
-use i18n;
-use ArrayList;
-use SiteTree;
-use Image;
-use ArrayData;
-use PaginatedList;
-use Config;
-use Folder;
+use SilverStripe\Assets\Image;
+use SilverStripe\Assets\Folder;
+use SilverStripe\CMS\Model\SiteTree;
+use SilverStripe\Core\Config;
+use SilverStripe\i18n\i18n;
+use SilverStripe\ORM\ArrayData;
+use SilverStripe\ORM\ArrayList;
+use SilverStripe\ORM\PaginatedList;
+use SilverStripe\View\Requirements;
 
 /**
  * A lightweight folder based gallery module for the CMS SilverStripe
@@ -41,18 +41,18 @@ class FolderGalleryPageController extends PageController {
         // include i18n Javascript library and lang files
         // it doesn't work without the meta-tag (see http://open.silverstripe.org/ticket/7949)
         Requirements::insertHeadTags('<meta http-equiv="Content-language" content="' . i18n::get_locale() . '" />');
-        Requirements::javascript(FRAMEWORK_DIR . "/javascript/i18n.js");
+        Requirements::javascript('silverstripe/admin:client/dist/js/i18n.js');
         Requirements::add_i18n_javascript('javascript/lang');
 
         // load foldergallery Javascript files into head
         Requirements::set_write_js_to_body(false);
 
         // include required foldergallery CSS and Javascript files
-        Requirements::css('thirdparty/colorbox/colorbox.css');
-        Requirements::css('css/foldergallery.css');
-        Requirements::javascript('thirdparty/jquery/jquery.min.js');
-        Requirements::javascript('thirdparty/colorbox/jquery.colorbox-min.js');
-        Requirements::javascript('javascript/foldergallery.js');
+        Requirements::css('juanitou/silverstripe-foldergallery: thirdparty/colorbox/colorbox.css');
+        Requirements::css('juanitou/silverstripe-foldergallery: css/foldergallery.css');
+        Requirements::javascript('juanitou/silverstripe-foldergallery: thirdparty/jquery/jquery.min.js');
+        Requirements::javascript('juanitou/silverstripe-foldergallery: thirdparty/colorbox/jquery.colorbox-min.js');
+        Requirements::javascript('juanitou/silverstripe-foldergallery: javascript/foldergallery.js');
     }
 
     /**
