@@ -2,13 +2,13 @@ fr:
   _config:
     WRONG_MODULE_FOLDER: 'Pour que le module {moduleName} fonctionne correctement, le dossier {folderName} doit être renommé en {moduleName}.'
 
-  FolderGalleryPage:
-    SINGULARNAME: 'Galerie (dossier)'
-    PLURALNAME: 'Galeries (dossiers)'
+  Juanitou\FolderGallery\FolderGalleryPage:
+    SINGULARNAME: 'Galerie'
+    PLURALNAME: 'Galeries'
     DESCRIPTION: 'Galerie basée sur des dossiers'
     CHOOSE_IMAGE_FOLDER: 'Dossier associé (sous-dossier foldergallery/)'
 
-  Foldergallery:
+  Juanitou\FolderGallery\Foldergallery:
     ALBUM: 'Album&nbsp;'
     ALBUM_HAS_NO_IMAGES: 'Cet album n&apos;a pas encore des images associées (essayez de synchroniser les dossiers).'
     BACK_TO_ALBUM_OVERVIEW: "Retourner à l'aperçu des albums"

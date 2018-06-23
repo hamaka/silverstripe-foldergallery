@@ -2,12 +2,12 @@ de:
   _config:
     WRONG_MODULE_FOLDER: 'Der Ordner "{folderName}" muß in "{moduleName}" umbenannt werden, um das {moduleName} Module nutzen zu können.'
 
-  FolderGalleryPage:
+  Juanitou\FolderGallery\FolderGalleryPage:
     SINGULARNAME: 'Bildergalerie'
     PLURALNAME: 'Bildergalerien'
     CHOOSE_IMAGE_FOLDER: 'Wähle einen Bilderornder (Unterordner in foldergallery/)'
 
-  Foldergallery:
+  Juanitou\FolderGallery\Foldergallery:
     ALBUM: 'Album'
     ALBUM_HAS_NO_IMAGES: 'Diesem Album sind noch keine Bilder zugeordnet (evtl. Medienordner synchronisieren).'
     BACK_TO_ALBUM_OVERVIEW: 'Zurück zur Albenübersicht'

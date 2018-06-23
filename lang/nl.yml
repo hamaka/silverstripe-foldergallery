@@ -2,12 +2,12 @@ nl:
   _config:
     WRONG_MODULE_FOLDER: 'Hernoem aub de map "{folderName}" naar "{moduleName}" om de {moduleName} module goed werkend te krijgen.'
 
-  FolderGalleryPage:
+  Juanitou\FolderGallery\FolderGalleryPage:
     SINGULARNAME: 'Fotoalbum'
     PLURALNAME: 'Fotoalbums'
     CHOOSE_IMAGE_FOLDER: 'Kies uw fotomap (submap foldergallery/)'
 
-  Foldergallery:
+  Juanitou\FolderGallery\Foldergallery:
     ALBUM: 'Album'
     ALBUM_HAS_NO_IMAGES: "Aan dit album zijn nog geen foto's toegewezen (plaats foto's in de betreffende map of probeer de map te synchroniseren in de tab bestanden)."
     BACK_TO_ALBUM_OVERVIEW: 'Terug naar het albumoverzicht'
