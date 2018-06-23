@@ -25,7 +25,7 @@ use SilverStripe\Forms\TreeDropdownField;
 class FolderGalleryPage extends Page {
     private static $allowed_children = [FolderGalleryPage::class];
     private static $db = ['AlbumFolderID' => 'Int'];
-    private static $icon = 'images/page-tree-icon.gif';
+    private static $icon = 'juanitou/silverstripe-foldergallery: images/page-tree-icon.gif';
     private static $plural_name = 'FolderGalleries';
     private static $singular_name = 'FolderGallery';
     private static $description = 'Folder based gallery';
