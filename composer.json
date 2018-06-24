@@ -29,7 +29,10 @@
             "images",
             "javascript",
             "thirdparty"
-        ]
+        ],
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
     },
     "autoload": {
         "psr-4": {
