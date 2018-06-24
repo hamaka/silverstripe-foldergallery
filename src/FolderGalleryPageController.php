@@ -46,7 +46,7 @@ class FolderGalleryPageController extends PageController
         // it doesn't work without the meta-tag (see http://open.silverstripe.org/ticket/7949)
         Requirements::insertHeadTags('<meta http-equiv="Content-language" content="' . i18n::get_locale() . '" />');
         Requirements::javascript('silverstripe/admin: client/dist/js/i18n.js');
-        Requirements::add_i18n_javascript('javascript/lang');
+        Requirements::add_i18n_javascript('juanitou/silverstripe-foldergallery: javascript/lang');
 
         // load foldergallery Javascript files into head
         Requirements::set_write_js_to_body(false);
