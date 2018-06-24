@@ -4,7 +4,7 @@ namespace Juanitou\FolderGallery;
 
 use SilverStripe\Assets\Image;
 use SilverStripe\Control\Director;
-use SilverStripe\ORM\DataExtension;
+use SilverStripe\Core\Extension;
 use SilverStripe\ORM\FieldType\DBDatetime;
 
 /**
@@ -23,7 +23,7 @@ use SilverStripe\ORM\FieldType\DBDatetime;
  * @license     http://www.gnu.org/licenses/gpl-3.0.html
 */
 
-class FolderGalleryImageExtension extends DataExtension
+class FolderGalleryImageExtension extends Extension
 {
     // decorate Image object with additional ExifDate field
     private static $db = array('ExifDate' => 'Datetime');
