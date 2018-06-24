@@ -23,7 +23,8 @@ use SilverStripe\ORM\FieldType\DBDatetime;
  * @license     http://www.gnu.org/licenses/gpl-3.0.html
 */
 
-class FolderGalleryImageExtension extends DataExtension {
+class FolderGalleryImageExtension extends DataExtension
+{
     // decorate Image object with additional ExifDate field
     private static $db = array('ExifDate' => 'Datetime');
 
@@ -34,7 +35,8 @@ class FolderGalleryImageExtension extends DataExtension {
      *
      * @return string Image caption created from filename
      */
-    public function Caption() {
+    public function Caption()
+    {
         if (preg_match('#(\d*-)?(.+)\.(jpg|jpeg|gif|png|tif|tiff)#i', $this->owner->Title, $matches)) {
             return ucfirst(str_replace('-', ' ', $matches[2]));
         }
@@ -47,7 +49,8 @@ class FolderGalleryImageExtension extends DataExtension {
      * @param string $field String with EXIF field to be returned
      * @return EXIF data or null
      */
-    public function ExifData($field='DateTimeOriginal') {
+    public function ExifData($field = 'DateTimeOriginal')
+    {
         // only JPEG and TIFF files contain EXIF data
         $image_extension = strtolower($this->owner->Extension);
         if (! in_array($image_extension, array('jpg', 'jpeg', 'tif', 'tiff'))) {
@@ -67,7 +70,8 @@ class FolderGalleryImageExtension extends DataExtension {
      * @param integer $parentId (if set only image objects assigned to this ID are updated)
      * @return void
      */
-    public static function writeExifDates($parentId=null) {
+    public static function writeExifDates($parentId = null)
+    {
         // fetch all requested image objects
         if (is_numeric($parentId)) {
             $images = Image::get()->filter('ParentID', $parentId);
@@ -75,12 +79,14 @@ class FolderGalleryImageExtension extends DataExtension {
             $images = Image::get();
         }
 
-        if (! $images->exists()) return false;
+        if (! $images->exists()) {
+            return false;
+        }
 
         // write/update Image.ExifDate database columns
         foreach ($images as $image) {
             // get exif original storage date if available
-            $exif_date = $image->ExifData($field='DateTimeOriginal');
+            $exif_date = $image->ExifData($field = 'DateTimeOriginal');
             $exif_date = is_null($exif_date) ? $image->Created : $exif_date;
 
             // update database field
