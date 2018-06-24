@@ -18,8 +18,8 @@
 		var gallery = $("a[rel='album']").colorbox({
 			transition: 'fade', 	// fade, elastic, none
 			speed: 300,
-			maxWidth: '800px',
-			maxHeight: '800px',
+			maxWidth: '95%',
+			maxHeight: '95%',
 			current: '{current}/{total}',
 			arrowKey: true,
 			escKey: true,
