@@ -22,7 +22,8 @@ use SilverStripe\Forms\TreeDropdownField;
  * @license     http://www.gnu.org/licenses/gpl-3.0.html
 */
 
-class FolderGalleryPage extends Page {
+class FolderGalleryPage extends Page
+{
     private static $allowed_children = [FolderGalleryPage::class];
     private static $db = ['AlbumFolderID' => 'Int'];
     private static $icon = 'juanitou/silverstripe-foldergallery: images/page-tree-icon.gif';
@@ -36,7 +37,8 @@ class FolderGalleryPage extends Page {
      *
      * @return modified backend fields
      */
-    function getCMSFields() {
+    public function getCMSFields()
+    {
         // create folder assets/foldergallery if not already exists
         Folder::find_or_make('foldergallery');
 
@@ -45,7 +47,9 @@ class FolderGalleryPage extends Page {
 
         // get "foldergallery" folder object
         $album = Folder::get()->filter('Name', 'foldergallery')->First();
-        if (! $album) return $fields;
+        if (! $album) {
+             return $fields;
+        }
 
         // add dropdown field with album folders (subfolders of assets/foldergallery)
         $tree = new TreeDropdownField(

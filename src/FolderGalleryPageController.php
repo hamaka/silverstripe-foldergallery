@@ -29,7 +29,8 @@ use SilverStripe\View\Requirements;
  * @license     http://www.gnu.org/licenses/gpl-3.0.html
 */
 
-class FolderGalleryPageController extends PageController {
+class FolderGalleryPageController extends PageController
+{
     /**
      * Includes the CSS and Javascript files required by the foldergallery module
      *
@@ -64,17 +65,20 @@ class FolderGalleryPageController extends PageController {
      *
      * @return paginated list of folder objects
      */
-    public function AlbumFolders() {
+    public function AlbumFolders()
+    {
         // extract all subpage objects (album pages)
         $pages = $this->Children();
-        if (! $pages->exists()) return false;
+        if (! $pages->exists()) {
+            return false;
+        }
 
         // store subpage data in array for further usage
         $data = $pages->toNestedArray();
 
         // add additional information to $data array
         $albumData = new ArrayList();
-        foreach($data as $index => $pageData) {
+        foreach ($data as $index => $pageData) {
             // extract number of assigned sub albums (child pages below actual page)
             $subAlbums = SiteTree::get()->filter('ID', $pageData['ID'])->First()->Children();
             $data[$index]['AlbumNumberSubAlbums'] = ($subAlbums) ? $subAlbums->Count() : 0;
@@ -107,10 +111,13 @@ class FolderGalleryPageController extends PageController {
      *
      * @return paginated list with image objects of the actual album
      */
-    public function AlbumImages() {
+    public function AlbumImages()
+    {
         // get album folder matching assigned albumFolderID
         $albumFolder = Folder::get()->filter('ID', (int) $this->AlbumFolderID);
-        if (! $albumFolder->exists()) return false;
+        if (! $albumFolder->exists()) {
+            return false;
+        }
 
         // fetch all images objects of actual folder and wrap it into paginated list
         $images = Image::get()->filter('ParentID', $albumFolder->First()->ID)->sort($this->getImageSortOption(), $this->getImageSortOrder());
@@ -130,7 +137,8 @@ class FolderGalleryPageController extends PageController {
      *
      * @return integer Maximum preview image size in pixel
      */
-    public static function getPreviewImageMaxSize() {
+    public static function getPreviewImageMaxSize()
+    {
         return (int) Config::inst()->get('Juanitou\FolderGallery', 'PREVIEW_IMAGE_MAX_SIZE');
     }
 
@@ -139,7 +147,8 @@ class FolderGalleryPageController extends PageController {
      *
      * @return bool Flag indicating if breadcrumbs are displayed or not
      */
-    public static function getShowBreadcrumbs() {
+    public static function getShowBreadcrumbs()
+    {
         return (bool) Config::inst()->get('Juanitou\FolderGallery', 'SHOW_BREADCRUMBS');
     }
 
@@ -148,7 +157,8 @@ class FolderGalleryPageController extends PageController {
      *
      * @return integer Thumbnail height in pixel
      */
-    public static function getThumbnailHeight() {
+    public static function getThumbnailHeight()
+    {
         return (int) Config::inst()->get('Juanitou\FolderGallery', 'THUMBNAIL_IMAGE_HEIGHT');
     }
 
@@ -157,7 +167,8 @@ class FolderGalleryPageController extends PageController {
      *
      * @return integer Thumbnail width in pixel
      */
-    public static function getThumbnailWidth() {
+    public static function getThumbnailWidth()
+    {
         return Config::inst()->get('Juanitou\FolderGallery', 'THUMBNAIL_IMAGE_WIDTH');
     }
 
@@ -166,7 +177,8 @@ class FolderGalleryPageController extends PageController {
      *
      * @return string (Filename, Created, LastEdited, ExifDate)
      */
-    public static function getImageSortOption() {
+    public static function getImageSortOption()
+    {
         $key = (int) Config::inst()->get('Juanitou\FolderGallery', 'IMAGE_SORT_OPTION');
         $sort_options = array(
             1 => 'Filename',
@@ -183,7 +195,8 @@ class FolderGalleryPageController extends PageController {
      *
      * @return string (ASC, DESC)
      */
-    public static function getImageSortOrder() {
+    public static function getImageSortOrder()
+    {
         $key = (int) Config::inst()->get('Juanitou\FolderGallery', 'IMAGE_SORT_ORDER');
         $sort_order = array(
             1 => 'ASC',
