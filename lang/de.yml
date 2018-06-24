@@ -9,7 +9,7 @@ de:
 
   Juanitou\FolderGallery\Foldergallery:
     ALBUM: 'Album'
-    ALBUM_HAS_NO_IMAGES: 'Diesem Album sind noch keine Bilder zugeordnet (evtl. Medienordner synchronisieren).'
+    ALBUM_HAS_NO_IMAGES: 'Diesem Album sind noch keine Bilder zugeordnet.'
     BACK_TO_ALBUM_OVERVIEW: 'Zurück zur Albenübersicht'
     DISPLAYED_ALBUMS: 'Angezeigte Alben'
     DISPLAYED_IMAGES: 'Angezeigte Bilder'

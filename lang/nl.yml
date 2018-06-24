@@ -9,7 +9,7 @@ nl:
 
   Juanitou\FolderGallery\Foldergallery:
     ALBUM: 'Album'
-    ALBUM_HAS_NO_IMAGES: "Aan dit album zijn nog geen foto's toegewezen (plaats foto's in de betreffende map of probeer de map te synchroniseren in de tab bestanden)."
+    ALBUM_HAS_NO_IMAGES: "Aan dit album zijn nog geen foto's toegewezen."
     BACK_TO_ALBUM_OVERVIEW: 'Terug naar het albumoverzicht'
     DISPLAYED_ALBUMS: 'Getoonde albums'
     DISPLAYED_IMAGES: "Getoonde foto's"

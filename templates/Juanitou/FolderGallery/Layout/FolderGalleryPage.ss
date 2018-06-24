@@ -1,4 +1,4 @@
-﻿<%-- Note: To adapt the Foldergallery layout to your theme layout, follow the steps below: --%>
+<%-- Note: To adapt the Foldergallery layout to your theme layout, follow the steps below: --%>
 <%--   1. copy "themes/your-template/templates/Layout/Page.ss" to "cwsoft-foldergallery/templates/Layout/cwsFolderGalleryPage.ss" --%>
 <%--   2. add the code "<% include Foldergallery %>" after "$Content" (in file cwsFolderGalleryPage.ss) --%>
 <%--   3. flush the cache and visit the Foldergallery page in the frontend --%>
@@ -10,7 +10,7 @@
 		<h1>$Title</h1>
 		<div class="content">
 			$Content
-			<% include Foldergallery %>	
+			<% include Juanitou\FolderGallery\Foldergallery %>
 		</div>
 	</article>
 	$Form

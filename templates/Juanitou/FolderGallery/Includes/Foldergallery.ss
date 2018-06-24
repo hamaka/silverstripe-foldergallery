@@ -1,6 +1,6 @@
 <div id="foldergallery">
 
-<% include GalleryBreadcrumbs %>
+<% include Juanitou\FolderGallery\GalleryBreadcrumbs %>
 
 <% if $AlbumFolders %>
 	<p class="infos">
@@ -40,7 +40,7 @@
 		</div>
 	<% end_loop %>
 
-	<% include AlbumPagination %>
+	<% include Juanitou\FolderGallery\AlbumPagination %>
 
 <% else  %>
 	<% if $AlbumImages %>
@@ -58,22 +58,22 @@
 
 		<% loop $AlbumImages %>
 			<div class="photo">
-				<a href="$SetRatioSize($Top.PreviewImageMaxSize, $Top.PreviewImageMaxSize).URL" rel="album" title="$Caption">
-					$CroppedImage($Top.ThumbnailWidth, $Top.ThumbnailHeight)
+				<a href="$Fit($Top.PreviewImageMaxSize, $Top.PreviewImageMaxSize).URL" rel="album" title="$Caption">
+					$Fill($Top.ThumbnailWidth, $Top.ThumbnailHeight)
 				</a>
 			</div>
 		<% end_loop %>
 
-		<% include ImagePagination %>
+		<% include Juanitou\FolderGallery\ImagePagination %>
 
 	<% else %>
 		<blockquote>
 			<strong><%t Juanitou\FolderGallery\Foldergallery.NOTE 'Note' %>:</strong>
-			<%t Juanitou\FolderGallery\Foldergallery.ALBUM_HAS_NO_IMAGES 'This album has no images assigned yet (try synchronizing the assets folder).' %>
+			<%t Juanitou\FolderGallery\Foldergallery.ALBUM_HAS_NO_IMAGES 'This album has no images assigned yet.' %>
 		</blockquote>
 	<% end_if %>
 <% end_if %>
 
-<% include Backlink %>
+<% include Juanitou\FolderGallery\Backlink %>
 
 </div>

@@ -10,7 +10,7 @@ en:
 
   Juanitou\FolderGallery\Foldergallery:
     ALBUM: 'Album'
-    ALBUM_HAS_NO_IMAGES: 'This album has no images assigned yet (try synchronizing the assets folder).'
+    ALBUM_HAS_NO_IMAGES: 'This album has no images assigned yet.'
     BACK_TO_ALBUM_OVERVIEW: 'Back to album overview'
     DISPLAYED_ALBUMS: 'Displayed albums'
     DISPLAYED_IMAGES: 'Displayed images'

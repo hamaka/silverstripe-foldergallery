@@ -10,7 +10,7 @@ fr:
 
   Juanitou\FolderGallery\Foldergallery:
     ALBUM: 'Album&nbsp;'
-    ALBUM_HAS_NO_IMAGES: 'Cet album n&apos;a pas encore des images associées (essayez de synchroniser les dossiers).'
+    ALBUM_HAS_NO_IMAGES: 'Cet album n&apos;a pas encore des images associées.'
     BACK_TO_ALBUM_OVERVIEW: "Retourner à l'aperçu des albums"
     DISPLAYED_ALBUMS: 'Albums affichés&nbsp;'
     DISPLAYED_IMAGES: 'Images affichées&nbsp;'

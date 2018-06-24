@@ -114,13 +114,12 @@ class FolderGalleryPageController extends PageController
     public function AlbumImages()
     {
         // get album folder matching assigned albumFolderID
-        $albumFolder = Folder::get()->filter('ID', (int) $this->AlbumFolderID);
+        $albumFolder = Folder::get()->byID($this->AlbumFolderID);
         if (! $albumFolder->exists()) {
             return false;
         }
-
         // fetch all images objects of actual folder and wrap it into paginated list
-        $images = Image::get()->filter('ParentID', $albumFolder->First()->ID)->sort($this->getImageSortOption(), $this->getImageSortOrder());
+        $images = Image::get()->filter('ParentID', $albumFolder->ID)->sort($this->getImageSortOption(), $this->getImageSortOrder());
         $imageList = ($images->exists()) ? new PaginatedList($images, $this->request) : false;
 
         // set page limit of displayed images to value defined in _config.php
@@ -181,7 +180,7 @@ class FolderGalleryPageController extends PageController
     {
         $key = (int) Config::inst()->get('Juanitou\FolderGallery', 'IMAGE_SORT_OPTION');
         $sort_options = array(
-            1 => 'Filename',
+            1 => 'FileFilename',
             2 => 'Created',
             3 => 'LastEdited',
             4 => 'ExifDate',
