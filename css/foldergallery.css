@@ -2,42 +2,44 @@
  * A lightweight folder based gallery module for the CMS SilverStripe
  *
  * Contains the CSS layout for the foldergallery module.
- * 
+ *
  * LICENSE: GNU General Public License 3.0
- * 
- * @platform    CMS SilverStripe 3.1.x (or higher)
- * @package     cwsoft-foldergallery
+ *
+ * @platform    CMS SilverStripe 4 (or higher)
+ * @package     juanitou-foldergallery
  * @author      cwsoft (http://cwsoft.de)
+ * @author      Juanitou (http://juanmolina.eu)
  * @copyright   cwsoft
+ * @copyright   Juanitou
  * @license     http://www.gnu.org/licenses/gpl-3.0.html
 */
 
 /** GENERAL STYLES FOR THE FOLDERGALLERY */
-#cwsoft-foldergallery  {
+#foldergallery  {
 	width: auto;
 }
 
-#cwsoft-foldergallery .clear {
+#foldergallery .clear {
 	clear: both;
 	margin: 0;
 	padding: 0;
 }
 
-#cwsoft-foldergallery .hidden {
+#foldergallery .hidden {
 	display: none;
 }
 
-#cwsoft-foldergallery  a,
-#cwsoft-foldergallery  a:link,
-#cwsoft-foldergallery  a:visited,
-#cwsoft-foldergallery  a:hover,
-#cwsoft-foldergallery  a:active {
+#foldergallery  a,
+#foldergallery  a:link,
+#foldergallery  a:visited,
+#foldergallery  a:hover,
+#foldergallery  a:active {
 	text-decoration: none;
 	border: 0;
 }
 
 /** STYLES FOR DISPLAY OF AVAILABLE ALBUMS/IMAGES AND BREADCRUMBS */
-#cwsoft-foldergallery .breadcrumbs {
+#foldergallery .breadcrumbs {
 	font-size: 95%;
 	color: #999;
 	margin: 0 0 1.3em 0;
@@ -46,13 +48,13 @@
 	border: 1px solid #ddd;
 }
 
-#cwsoft-foldergallery  p.infos {
+#foldergallery  p.infos {
 	font-weight: bold;
 	margin: 0;
 }
 
 /** STYLES FOR THE ALBUM FOLDER VIEWS */
-#cwsoft-foldergallery .album {
+#foldergallery .album {
 	float: left;
 	width: 167px;	/* _config/settings.yml:THUMBNAIL_IMAGE_WIDTH + 15px left margin + 2px border for album cover image */
 	height: 177px;	/* _config/settings.yml:THUMBNAIL_IMAGE_HEIGHT + 2px border for album cover image + 60 px for album description */
@@ -64,29 +66,29 @@
 	overflow: hidden;
 }
 
-#cwsoft-foldergallery .album:hover {
+#foldergallery .album:hover {
 	border: 2px solid #610;
 }
 
-#cwsoft-foldergallery .album img {
+#foldergallery .album img {
 	border: 1px solid #7b6b4a;
 	margin: 0 0 0 15px;
 }
 
-#cwsoft-foldergallery .album img.subfolder {
+#foldergallery .album img.subfolder {
 	border: 0 !important;
 	margin: 0 0 0 30px !important;
 	height: 117px;
 }
 
-#cwsoft-foldergallery .album ul {
+#foldergallery .album ul {
 	list-style-type: none;
 	padding: 0;
 	margin: 0 0 0 15px;
 	padding: 0.1em;
 }
 
-#cwsoft-foldergallery .album ul li {
+#foldergallery .album ul li {
 	list-style-type: none;
 	font-size: 90%;
 	color: #666;
@@ -94,13 +96,13 @@
 	text-align: center;
 }
 
-#cwsoft-foldergallery .album ul li.title {
+#foldergallery .album ul li.title {
 	font-weight: bold;
 	color: #444;
 }
 
 /** STYLES FOR THE PHOTO THUMBNAIL VIEWS */
-#cwsoft-foldergallery .photo {
+#foldergallery .photo {
 	float: left;
 	width: 150px;	/* _config/settings.yml:THUMBNAIL_IMAGE_WIDTH */
 	height: 115px;	/* _config/settings.yml:THUMBNAIL_IMAGE_HEIGHT */
@@ -111,17 +113,17 @@
 	padding: 8px;
 }
 
-#cwsoft-foldergallery .photo:hover {
+#foldergallery .photo:hover {
 	border: 2px solid #777;
 }
 
-#cwsoft-foldergallery .photo img {
+#foldergallery .photo img {
 	border: 1px solid #999;
 	margin: 0;
 }
 
 /** STYLES FOR THE FOLDERGALLERY NAVIGATION AND PAGINATION */
-#cwsoft-foldergallery .backlink {
+#foldergallery .backlink {
 	clear: both;
 	display: block;
 	background-color: #eee;
@@ -130,15 +132,15 @@
 	margin: 1.5em 0 0 0;
 }
 
-#cwsoft-foldergallery .backlink a {
+#foldergallery .backlink a {
 	text-decoration: none;
 }
 
-#cwsoft-foldergallery .pagination  {
+#foldergallery .pagination  {
 	margin: 1.2em 0 0 0;
 }
 
-#cwsoft-foldergallery .pagination a {
+#foldergallery .pagination a {
 	border: 1px solid #ddd;
 	background-color: #eee;
 	padding: 0.3em;
@@ -148,7 +150,7 @@
 a.cboxFullSizeView {
 	display: block;
 	position: absolute;
-	bottom: 0; 
+	bottom: 0;
 	right: 26px;
 	background: url(../images/full-size.png) no-repeat 0 0;
 	width: 25px;

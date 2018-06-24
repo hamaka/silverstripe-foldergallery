@@ -10,8 +10,10 @@ Juanitou\FolderGallery:
   IMAGE_SORT_OPTION: 1
   IMAGE_SORT_ORDER: 1
   SHOW_BREADCRUMBS: true
-GDBackend:
-  default_quality: 95
+SilverStripe\Core\Injector\Injector:
+  SilverStripe\Assets\Image_Backend:
+    properties:
+      Quality: 95
 SilverStripe\Assets\Image:
   extensions:
     - Juanitou\FolderGallery\FolderGalleryImageExtension

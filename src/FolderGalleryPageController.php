@@ -6,11 +6,11 @@ use PageController;
 use SilverStripe\Assets\Image;
 use SilverStripe\Assets\Folder;
 use SilverStripe\CMS\Model\SiteTree;
-use SilverStripe\Core\Config;
+use SilverStripe\Core\Config\Config;
 use SilverStripe\i18n\i18n;
-use SilverStripe\ORM\ArrayData;
 use SilverStripe\ORM\ArrayList;
 use SilverStripe\ORM\PaginatedList;
+use SilverStripe\View\ArrayData;
 use SilverStripe\View\Requirements;
 
 /**
@@ -31,14 +31,17 @@ use SilverStripe\View\Requirements;
 
 class FolderGalleryPageController extends PageController {
     /**
-     * Inlcudes the CSS and Javascript files required by the foldergallery module
+     * Includes the CSS and Javascript files required by the foldergallery module
      *
      * @return void
      */
-     function init() {
+
+    protected function init()
+    {
         parent::init();
 
         // include i18n Javascript library and lang files
+        // TODO: Update these libraries
         // it doesn't work without the meta-tag (see http://open.silverstripe.org/ticket/7949)
         Requirements::insertHeadTags('<meta http-equiv="Content-language" content="' . i18n::get_locale() . '" />');
         Requirements::javascript('silverstripe/admin: client/dist/js/i18n.js');
@@ -92,7 +95,7 @@ class FolderGalleryPageController extends PageController {
 
         // set page limit of displayed images to value defined in _config.php
         if ($albumList) {
-            $albumsPerPage = (int) Config::inst()->get('FolderGallery', 'ALBUMS_PER_PAGE');
+            $albumsPerPage = (int) Config::inst()->get('Juanitou\FolderGallery', 'ALBUMS_PER_PAGE');
             $albumList->setPageLength($albumsPerPage);
         }
 
@@ -115,7 +118,7 @@ class FolderGalleryPageController extends PageController {
 
         // set page limit of displayed images to value defined in _config.php
         if ($imageList) {
-            $imagesPerPage = (int) Config::inst()->get('FolderGallery', 'IMAGES_PER_PAGE');
+            $imagesPerPage = (int) Config::inst()->get('Juanitou\FolderGallery', 'IMAGES_PER_PAGE');
             $imageList->setPageLength($imagesPerPage);
         }
 
@@ -128,7 +131,7 @@ class FolderGalleryPageController extends PageController {
      * @return integer Maximum preview image size in pixel
      */
     public static function getPreviewImageMaxSize() {
-        return (int) Config::inst()->get('FolderGallery', 'PREVIEW_IMAGE_MAX_SIZE');
+        return (int) Config::inst()->get('Juanitou\FolderGallery', 'PREVIEW_IMAGE_MAX_SIZE');
     }
 
     /**
@@ -137,7 +140,7 @@ class FolderGalleryPageController extends PageController {
      * @return bool Flag indicating if breadcrumbs are displayed or not
      */
     public static function getShowBreadcrumbs() {
-        return (bool) Config::inst()->get('FolderGallery', 'SHOW_BREADCRUMBS');
+        return (bool) Config::inst()->get('Juanitou\FolderGallery', 'SHOW_BREADCRUMBS');
     }
 
     /**
@@ -146,7 +149,7 @@ class FolderGalleryPageController extends PageController {
      * @return integer Thumbnail height in pixel
      */
     public static function getThumbnailHeight() {
-        return (int) Config::inst()->get('FolderGallery', 'THUMBNAIL_IMAGE_HEIGHT');
+        return (int) Config::inst()->get('Juanitou\FolderGallery', 'THUMBNAIL_IMAGE_HEIGHT');
     }
 
     /**
@@ -155,7 +158,7 @@ class FolderGalleryPageController extends PageController {
      * @return integer Thumbnail width in pixel
      */
     public static function getThumbnailWidth() {
-        return Config::inst()->get('FolderGallery', 'THUMBNAIL_IMAGE_WIDTH');
+        return Config::inst()->get('Juanitou\FolderGallery', 'THUMBNAIL_IMAGE_WIDTH');
     }
 
     /**
@@ -164,7 +167,7 @@ class FolderGalleryPageController extends PageController {
      * @return string (Filename, Created, LastEdited, ExifDate)
      */
     public static function getImageSortOption() {
-        $key = (int) Config::inst()->get('FolderGallery', 'IMAGE_SORT_OPTION');
+        $key = (int) Config::inst()->get('Juanitou\FolderGallery', 'IMAGE_SORT_OPTION');
         $sort_options = array(
             1 => 'Filename',
             2 => 'Created',
@@ -181,7 +184,7 @@ class FolderGalleryPageController extends PageController {
      * @return string (ASC, DESC)
      */
     public static function getImageSortOrder() {
-        $key = (int) Config::inst()->get('FolderGallery', 'IMAGE_SORT_ORDER');
+        $key = (int) Config::inst()->get('Juanitou\FolderGallery', 'IMAGE_SORT_ORDER');
         $sort_order = array(
             1 => 'ASC',
             2 => 'DESC',
