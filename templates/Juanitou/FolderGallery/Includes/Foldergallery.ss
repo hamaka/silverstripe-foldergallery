@@ -29,7 +29,7 @@
 
 			<% else %>
 				<a href="$AlbumURL" title="<%t Juanitou\FolderGallery\Foldergallery.ALBUM 'Album' %>: $Title <%t Juanitou\FolderGallery\Foldergallery.NUMBER_OF_SUB_ALBUMS '(Sub albums: {subAlbums})' subAlbums=$AlbumNumberSubAlbums %>">
-					<img src="foldergallery/images/subfolder.png" class="subfolder" alt="subfolders"/>
+					<img src="$ModulePath(juanitou/silverstripe-foldergallery)/images/subfolder.png" class="subfolder" alt="subfolders"/>
 				</a>
 
 				<ul class="album-description">
