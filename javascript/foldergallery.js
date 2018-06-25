@@ -47,6 +47,12 @@
 				// re-position the optional start/stop slideshow text to consider extra space of the inserted button
 				$("#cboxSlideshow").css({"right": "52px", "text-transform": "none"});
 
+                // add title to the slideshow button
+                $("#cboxSlideshow").attr("title", ss.i18n._t('foldergallery.STOP_SLIDESHOW'));
+                $("#cboxSlideshow").on("click", function(){
+                    $(this).attr("title", ss.i18n._t('foldergallery.START_SLIDESHOW'));
+                });
+
 				// return default jQuery image title
 				return this.title;
 			},
