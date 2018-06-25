@@ -16,6 +16,6 @@ nl:
     NOTE: 'Notitie'
     NUMBER_OF_IMAGES: "(Foto's: {images})"
     NUMBER_OF_SUB_ALBUMS: '(Subalbums: {subAlbums})'
-    START_SLIDESHOW: 'Start diapresentatie'
+    START_SLIDESHOW: 'Diapresentatie'
     PREVIOUS: 'Vorige'
     NEXT: 'Volgende'

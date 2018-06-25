@@ -53,7 +53,7 @@
 				$AlbumImages.Count / $AlbumImages.Count
 			<% end_if %>
 
-			<a href="#" id="cboxStartSlideShow" class="hidden"><%t Juanitou\FolderGallery\Foldergallery.START_SLIDESHOW 'start slideshow' %></a>
+			<a href="#" id="cboxStartSlideShow" class="hidden"><%t Juanitou\FolderGallery\Foldergallery.START_SLIDESHOW 'slideshow' %></a>
 		</p>
 
 		<% loop $AlbumImages %>

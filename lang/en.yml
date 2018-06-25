@@ -17,6 +17,6 @@ en:
     NOTE: 'Note'
     NUMBER_OF_IMAGES: '(Images: {images})'
     NUMBER_OF_SUB_ALBUMS: '(Subalbums: {subAlbums})'
-    START_SLIDESHOW: 'start slideshow'
+    START_SLIDESHOW: 'slideshow'
     PREVIOUS: 'previous'
     NEXT: 'next'

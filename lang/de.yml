@@ -16,6 +16,6 @@ de:
     NOTE: 'Hinweis'
     NUMBER_OF_IMAGES: '(Bilder: {images})'
     NUMBER_OF_SUB_ALBUMS: '(Unteralben: {subAlbums})'
-    START_SLIDESHOW: 'Diashow starten'
+    START_SLIDESHOW: 'Diashow'
     PREVIOUS: 'zurück'
     NEXT: 'vor'
