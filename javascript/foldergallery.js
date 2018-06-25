@@ -44,7 +44,7 @@
 				// insert link to left side of the jQuery close button to display original image in new window
 				$("#cboxClose").after('<a href="' + originalImageUrl + '" target="_blank" class="cboxFullSizeView" title="' + ss.i18n._t('foldergallery.FULL_SCALE') +'">' + ss.i18n._t('foldergallery.FULL_SCALE') + '</a>');
 
-				// re-positon the optional start/stop slideshow text to consider extra space of the inserted button
+				// re-position the optional start/stop slideshow text to consider extra space of the inserted button
 				$("#cboxSlideshow").css({"right": "52px", "text-transform": "none"});
 
 				// return default jQuery image title
