@@ -52,7 +52,7 @@ class FolderGalleryPage extends Page
         }
 
         // add dropdown field with album folders (subfolders of assets/foldergallery)
-        $tree = new TreeDropdownField(
+        $tree = TreeDropdownField::create(
             'AlbumFolderID',
             _t(
                 __CLASS__ . '.CHOOSE_IMAGE_FOLDER',

@@ -26,7 +26,7 @@ use SilverStripe\ORM\FieldType\DBDatetime;
 class FolderGalleryImageExtension extends Extension
 {
     // decorate Image object with additional ExifDate field
-    private static $db = array('ExifDate' => 'Datetime');
+    private static $db = ['ExifDate' => 'Datetime'];
 
     /**
      * Creates a nice looking image caption from an image filename.
