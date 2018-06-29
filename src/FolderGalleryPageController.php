@@ -48,8 +48,9 @@ class FolderGalleryPageController extends PageController
         Requirements::javascript('silverstripe/admin: client/dist/js/i18n.js');
         Requirements::add_i18n_javascript('juanitou/silverstripe-foldergallery: javascript/lang');
 
+        // TODO: Why?
         // load foldergallery Javascript files into head
-        Requirements::set_write_js_to_body(false);
+        //Requirements::set_write_js_to_body(false);
 
         // include required foldergallery CSS and Javascript files
         Requirements::css('juanitou/silverstripe-foldergallery: thirdparty/colorbox/colorbox.css');
