@@ -115,8 +115,7 @@ class FolderGalleryPageController extends PageController
     public function AlbumImages()
     {
         // get album folder matching assigned albumFolderID
-        $albumFolder = Folder::get()->byID($this->AlbumFolderID);
-        if (! $albumFolder->exists()) {
+        if (! $albumFolder = Folder::get()->byID($this->AlbumFolderID)) {
             return false;
         }
         // fetch all images objects of actual folder and wrap it into paginated list
