@@ -1,7 +1,7 @@
 {
     "name": "juanitou/silverstripe-foldergallery",
     "type": "silverstripe-vendormodule",
-    "description": "A light-weight and simple to use folder-based image gallery for the CMS SilverStripe enabling you to setup small to medium image galleries with ease.",
+    "description": "A light-weight and simple to use folder-based image gallery for the SilverStripe CMS, enabling you to setup small to medium image galleries with ease.",
     "keywords": ["silverstripe", "gallery", "image", "imagegallery", "foldergallery"],
     "homepage": "https://github.com/Juanitou/silverstripe-foldergallery",
     "license": "GNU General Public License (GPL) v3.0",
