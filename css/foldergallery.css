@@ -120,6 +120,7 @@
 #foldergallery .photo img {
 	border: 1px solid #999;
 	margin: 0;
+	width: 100%;
 }
 
 /** STYLES FOR THE FOLDERGALLERY NAVIGATION AND PAGINATION */
