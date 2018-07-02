@@ -16,24 +16,24 @@
 	<% loop $AlbumFolders %>
 		<div class="album">
 			<% if $AlbumNumberImages != 0 && $AlbumNumberSubAlbums == 0 %>
-				<a href="$AlbumURL" title="<%t Juanitou\FolderGallery\Foldergallery.ALBUM 'Album' %>: $Title <%t Juanitou\FolderGallery\Foldergallery.NUMBER_OF_IMAGES '(Images: {images})' images=$AlbumNumberImages %>">
+				<a href="$AlbumURL" title="<%t Juanitou\FolderGallery\Foldergallery.ALBUM 'Album' %>: $Title.ATT <%t Juanitou\FolderGallery\Foldergallery.NUMBER_OF_IMAGES '(Images: {images})' images=$AlbumNumberImages %>">
 					<% with $AlbumCoverImage %>
             $Fill($Top.ThumbnailWidth, $Top.ThumbnailHeight)
 					<% end_with %>
 				</a>
 
 				<ul class="album-description">
-					<li class="title">&raquo; $MenuTitle &laquo;</li>
+          <li class="title">&raquo; <% if $MenuTitle %>$MenuTitle<% else %>$Title<% end_if %> &laquo;</li>
 					<li><%t Juanitou\FolderGallery\Foldergallery.NUMBER_OF_IMAGES '(Images: {images})' images=$AlbumNumberImages %></li>
 				</ul>
 
 			<% else %>
-				<a href="$AlbumURL" title="<%t Juanitou\FolderGallery\Foldergallery.ALBUM 'Album' %>: $Title <%t Juanitou\FolderGallery\Foldergallery.NUMBER_OF_SUB_ALBUMS '(Sub albums: {subAlbums})' subAlbums=$AlbumNumberSubAlbums %>">
+				<a href="$AlbumURL" title="<%t Juanitou\FolderGallery\Foldergallery.ALBUM 'Album' %>: $Title.ATT <%t Juanitou\FolderGallery\Foldergallery.NUMBER_OF_SUB_ALBUMS '(Sub albums: {subAlbums})' subAlbums=$AlbumNumberSubAlbums %>">
           <img src="resources/{$ModulePath(juanitou/silverstripe-foldergallery)}/images/subfolder.png" class="subfolder" alt="subfolders"/>
 				</a>
 
 				<ul class="album-description">
-					<li class="title">&raquo; $MenuTitle &laquo;</li>
+          <li class="title">&raquo; <% if $MenuTitle %>$MenuTitle<% else %>$Title<% end_if %> &laquo;</li>
 					<li><%t Juanitou\FolderGallery\Foldergallery.NUMBER_OF_SUB_ALBUMS '(Sub albums: {subAlbums})' subAlbums=$AlbumNumberSubAlbums %></li>
 				</ul>
 			<% end_if %>
@@ -58,7 +58,7 @@
 
 		<% loop $AlbumImages %>
 			<div class="photo">
-				<a href="$Fit($Top.PreviewImageMaxSize, $Top.PreviewImageMaxSize).URL" rel="album" title="$Caption">
+				<a href="$Fit($Top.PreviewImageMaxSize, $Top.PreviewImageMaxSize).URL" rel="album" title="$Caption.ATT">
 					$Fill($Top.ThumbnailWidth, $Top.ThumbnailHeight)
 				</a>
 			</div>
