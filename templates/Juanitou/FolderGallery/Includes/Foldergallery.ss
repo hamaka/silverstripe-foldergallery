@@ -23,7 +23,7 @@
 				</a>
 
 				<ul class="album-description">
-					<li class="title">&raquo; $Title &laquo;</li>
+					<li class="title">&raquo; $MenuTitle &laquo;</li>
 					<li><%t Juanitou\FolderGallery\Foldergallery.NUMBER_OF_IMAGES '(Images: {images})' images=$AlbumNumberImages %></li>
 				</ul>
 
@@ -33,7 +33,7 @@
 				</a>
 
 				<ul class="album-description">
-					<li class="title">&raquo; $Title &laquo;</li>
+					<li class="title">&raquo; $MenuTitle &laquo;</li>
 					<li><%t Juanitou\FolderGallery\Foldergallery.NUMBER_OF_SUB_ALBUMS '(Sub albums: {subAlbums})' subAlbums=$AlbumNumberSubAlbums %></li>
 				</ul>
 			<% end_if %>
