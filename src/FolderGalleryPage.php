@@ -16,7 +16,7 @@ use SilverStripe\Forms\TreeDropdownField;
  * @platform    CMS SilverStripe 4 (or higher)
  * @package     juanitou-foldergallery
  * @author      cwsoft (http://cwsoft.de)
- * @author      Juanitou (http://juanmolina.eu)
+ * @author      Juanitou (https://juanmolina.eu/)
  * @copyright   cwsoft
  * @copyright   Juanitou
  * @license     http://www.gnu.org/licenses/gpl-3.0.html

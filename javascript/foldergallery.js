@@ -8,7 +8,7 @@
  * @platform    CMS SilverStripe 4 (or higher)
  * @package     juanitou-foldergallery
  * @author      cwsoft (http://cwsoft.de)
- * @author      Juanitou (http://juanmolina.eu)
+ * @author      Juanitou (https://juanmolina.eu/)
  * @copyright   cwsoft
  * @copyright   Juanitou
 */
