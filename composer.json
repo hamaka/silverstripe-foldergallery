@@ -20,9 +20,8 @@
         }
     ],
     "require": {
-        "silverstripe/vendor-plugin": "^1.0",
-        "silverstripe/framework": "^4",
-        "silverstripe/cms": "^4"
+        "silverstripe/framework": "^4|^5",
+        "silverstripe/cms": "^4|^5"
     },
     "extra": {
         "expose": [
