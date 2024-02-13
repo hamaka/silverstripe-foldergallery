@@ -1,4 +1,4 @@
-# Folder based image gallery for CMS SilverStripe 4.x
+# Folder based image gallery for CMS SilverStripe 5.x
 ```
 NOTE: Work-in-progress fork of cwsoft/silverstripe-foldergallery, which is no longer maintained.
 ```
