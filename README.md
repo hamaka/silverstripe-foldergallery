@@ -1,4 +1,8 @@
 # Folder based image gallery for CMS SilverStripe 5.x
+
+## Hamaka Notes
+The module works on SilverStripe 5 + PHP 8.2. We only had to remove the composer requires.
+
 ```
 NOTE: Work-in-progress fork of cwsoft/silverstripe-foldergallery, which is no longer maintained.
 ```
